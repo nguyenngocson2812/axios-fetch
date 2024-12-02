@@ -32,36 +32,10 @@ export const del = async (path, options = {}) => {
     return response.data;
 };
 
-export default httpRequest;
-
-// --option--
-
-httpRequest.get(api, {
-    headers: {
-        Authorization: 'Bearer your_token_here',
-        'Content-Type': 'application/json',
-    },
-    params: { page: 1, limit: 10 },
-    timeout: 5000,
-});
-
-get('/endpoint', {
-    params: { key: 'value' },
-    headers: { Authorization: 'Bearer your-token' },
-}).then((data) => console.log(data));
-
-post(
-    '/endpoint',
-    { key: 'value' }, // Request body
-    { headers: { Authorization: 'Bearer your-token' } }, // Custom headers
-).then((data) => console.log(data));
-
-put(
-    '/endpoint/1',
-    { updatedKey: 'newValue' }, // Request body
-    { headers: { Authorization: 'Bearer your-token' } }, // Custom headers
-).then((data) => console.log(data));
-
-del('/endpoint/1', {
-    headers: { Authorization: 'Bearer your-token' }, // Custom headers
-}).then((data) => console.log(data));
+const request = {
+    get,
+    post,
+    put,
+    del,
+};
+export default request;
